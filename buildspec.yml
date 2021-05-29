@@ -12,7 +12,7 @@ phases:
   post_build:
     commands:
       - aws s3 cp --recursive --acl public-read ./build s3://$BUCKET_NAME/
-      - aws cloudfront create-invalidation — distribution-id $DIST_ID — paths '/*'    
+      - aws cloudfront create-invalidation --distribution-id $DIST_ID --paths '/*'    
 
 artifacts:
   files:
